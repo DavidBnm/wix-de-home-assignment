@@ -1,2 +1,3 @@
-# wix-de-home-assistant
-This repository contains the work for the home assignment I received from Wis for the Data Engineer role. The project demonstrates my ability to handle various data engineering tasks, including data processing, cleaning, and analysis. Feel free to explore the code, and I am open to any feedback.
+This repository contains the work I completed for the Data Engineer role home assignment from Wis. It showcases my skills in data engineering, including data processing, cleaning, and analysis, based on the tasks outlined in the assignment.
+
+Feel free to explore the code, and please don't hesitate to provide feedback.
