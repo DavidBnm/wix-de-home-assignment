@@ -57,6 +57,7 @@ def fetch_stock_data(ticker: str, date: str, adjusted=True, api_key=API_KEY) -> 
 
     return None
 
+
 def fetch_currency_name(ticker: str, api_key=API_KEY) -> str:
     """
     Fetches the currency name in which a given stock ticker is traded from the Polygon API.
@@ -95,6 +96,7 @@ def fetch_currency_name(ticker: str, api_key=API_KEY) -> str:
     except Exception as e:
         logging.exception(f"An error occurred while fetching currency name for {ticker}: {str(e)}")
         return None
+
 
 def create_price_types_df(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -187,6 +189,7 @@ def fetch_latest_currency_rates(base_currency: str, symbols: [str], date: [str])
     except Exception as e:
         logging.exception(f"An error occurred while fetching exchange rates for {base_currency} on {date}: {str(e)}")
         return None
+
 
 def fetch_available_currencies() -> pd.DataFrame:
     """

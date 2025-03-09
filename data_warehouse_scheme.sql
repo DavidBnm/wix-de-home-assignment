@@ -31,7 +31,6 @@ CREATE TABLE stock_daily_price (
 );
 
 
-
 -- Dimension Table
 CREATE TABLE currencies (
     currency_code VARCHAR(10) PRIMARY KEY,
