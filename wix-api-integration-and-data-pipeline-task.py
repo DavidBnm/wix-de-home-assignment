@@ -248,7 +248,7 @@ def create_stock_currency_report(stock_df_long: pd.DataFrame, exchange_rates_df:
         merged_df = stock_df_long.merge(exchange_rates_df, how="cross")
         merged_df["currency_price"] = merged_df["price"] * merged_df["exchange_rate"]
 
-        final_columns = ["ticker", "price_type", "ticker_currency", "price", "currency", "exchange_rate", "currency_price"]
+        final_columns = ["date", "ticker", "price_type", "ticker_currency", "price", "currency", "exchange_rate", "currency_price"]
         final_df = merged_df[final_columns]
 
         logging.info(f"Successfully created the stock currency report for {stock_currency}.")
