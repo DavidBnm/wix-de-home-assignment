@@ -57,6 +57,7 @@ def fetch_stock_data(ticker: str, date: str, adjusted=True, api_key=API_KEY) -> 
 
     return None
 
+
 def fetch_currency_name(ticker: str, api_key=API_KEY) -> str:
     """
     Fetches the currency name in which a given stock ticker is traded from the Polygon API.
@@ -95,6 +96,7 @@ def fetch_currency_name(ticker: str, api_key=API_KEY) -> str:
     except Exception as e:
         logging.exception(f"An error occurred while fetching currency name for {ticker}: {str(e)}")
         return None
+
 
 def create_price_types_df(df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -188,6 +190,7 @@ def fetch_latest_currency_rates(base_currency: str, symbols: [str], date: [str])
         logging.exception(f"An error occurred while fetching exchange rates for {base_currency} on {date}: {str(e)}")
         return None
 
+
 def fetch_available_currencies() -> pd.DataFrame:
     """
     Fetches a list of available currencies from the Frankfurter API.
@@ -248,7 +251,7 @@ def create_stock_currency_report(stock_df_long: pd.DataFrame, exchange_rates_df:
         merged_df = stock_df_long.merge(exchange_rates_df, how="cross")
         merged_df["currency_price"] = merged_df["price"] * merged_df["exchange_rate"]
 
-        final_columns = ["ticker", "price_type", "ticker_currency", "price", "currency", "exchange_rate", "currency_price"]
+        final_columns = ["date", "ticker", "price_type", "ticker_currency", "price", "currency", "exchange_rate", "currency_price"]
         final_df = merged_df[final_columns]
 
         logging.info(f"Successfully created the stock currency report for {stock_currency}.")
